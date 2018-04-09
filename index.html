@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/main.css" rel="stylesheet"> 
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" id="logo" />
+            <div class="slogan">TRUNG TAM TIN HOC NGOAI NGU PIT</div>
+        </header>
+        <div id="mainbox">
+            <nav>
+                <ul>
+                    <li>Home</li>
+                    <li>Introduce</li>
+                    <li>Service</li>
+                    <li>Contact</li>
+                </ul>               
+            </nav>
+            <section>
+                <article>
+                    <form onsubmit="return calSum()">
+                        <fieldset>
+                            Calculation
+                        <div id="msgCal" style="color:red;font-size: 15px;"></div>
+                        <label> Number A</label>
+                        <input type="number" name="num_a" id="frmNumA" value=""><br>
+                        <label>Number B</label>
+                        <input type="number" name="num_b" id="frmNumB" value=""><br><br>
+                        <input type="submit" id="btnSubmit" value="Sum All">
+                        
+                        </fieldset>
+                    </form>
+                    <script>
+                        function calSum() {                      
+                            var numa, numb, sumall;
+                            numa = document.getElementById("frmNumA").value;
+                            numb = document.getElementById("frmNumB").value;
+                            if(numa==null || numa ==""){
+                               // alert("A khong duoc rong");
+                               document.getElementById("msgCal").innerHTML = "A khong duoc rong";
+                                return false;
+                            }
+                            if(numb==null || numb == ""){
+                               // alert("B khong duoc rong");
+                               document.getElementById("msgCal").innerHTML = "B khong duoc rong";
+                                return false;
+                            }
+                            sumall =  parseInt(numa) + parseInt(numb);
+                            //alert("Sum A and B is " + sumall);
+                            document.getElementById("msgCal").innerHTML = "Sum A and B is " + sumall;
+                            return false;
+                        }
+                    </script>
+                </article>             
+            </section>
+            <aside>Aside</aside>
+        </div>
+        <footer>
+            <div class="copyright">Copyright@dungnq.co</div>
+        </footer>   
+    </body>
+</html>
